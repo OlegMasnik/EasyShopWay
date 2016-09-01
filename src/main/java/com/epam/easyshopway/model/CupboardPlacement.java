@@ -64,35 +64,35 @@ public class CupboardPlacement {
 		this.cupboardId = cupboardId;
 	}
 
-	public Integer getxStart() {
+	public Integer getXStart() {
 		return xStart;
 	}
 
-	public void setxStart(Integer xStart) {
+	public void setXStart(Integer xStart) {
 		this.xStart = xStart;
 	}
 
-	public Integer getyStart() {
+	public Integer getYStart() {
 		return yStart;
 	}
 
-	public void setyStart(Integer yStart) {
+	public void setYStart(Integer yStart) {
 		this.yStart = yStart;
 	}
 
-	public Integer getxEnd() {
+	public Integer getXEnd() {
 		return xEnd;
 	}
 
-	public void setxEnd(Integer xEnd) {
+	public void setXEnd(Integer xEnd) {
 		this.xEnd = xEnd;
 	}
 
-	public Integer getyEnd() {
+	public Integer getYEnd() {
 		return yEnd;
 	}
 
-	public void setyEnd(Integer yEnd) {
+	public void setYEnd(Integer yEnd) {
 		this.yEnd = yEnd;
 	}
 

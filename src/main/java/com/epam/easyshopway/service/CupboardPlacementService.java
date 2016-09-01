@@ -56,14 +56,5 @@ public class CupboardPlacementService {
 		return 0;
 	}
 	
-	public static int delete (Integer id){
-		try(CupboardPlacementDAO cupboardPlacementDAO = new CupboardPlacementDAO()){
-			return cupboardPlacementDAO.delete(id);
-		}catch (SQLException e){
-			e.printStackTrace();
-		}catch (Exception e){
-			e.printStackTrace();
-		}
-		return 0;
-	}
+	
 }
