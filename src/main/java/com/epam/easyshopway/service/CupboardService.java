@@ -7,9 +7,9 @@ import com.epam.easyshopway.dao.CupbordDAO;
 import com.epam.easyshopway.model.Cupboard;
 
 public class CupboardService {
-	public static int insert(Cupboard product) {
+	public static int insert(Cupboard cupboard) {
 		try (CupbordDAO cupboardDAO = new CupbordDAO()) {
-			return cupboardDAO.insert(product);
+			return cupboardDAO.insert(cupboard);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

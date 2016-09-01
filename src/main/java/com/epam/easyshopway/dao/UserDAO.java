@@ -45,8 +45,9 @@ public class UserDAO extends AbstractDAO<User> {
 	public List<User> getAll() throws SQLException, IllegalAccessException, InstantiationException {
 		PreparedStatement statement = connection.prepareStatement(SELECT_ALL);
 		ResultSet resultSet = statement.executeQuery(SELECT_ALL);
+		List<User> users =new Transformer<User>(User.class).fromRStoCollection(resultSet); 
 		statement.close();
-		return new Transformer<User>(User.class).fromRStoCollection(resultSet);
+		return users;
 
 	}
 	
@@ -55,8 +56,8 @@ public class UserDAO extends AbstractDAO<User> {
 		PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID);
 		statement.setInt(1, id);
 		ResultSet resultSet = statement.executeQuery();
-		statement.close();
 		List<User> users = new Transformer<User>(User.class).fromRStoCollection(resultSet);
+		statement.close();
 		if (users.size() > 0)
 			return users.iterator().next();
 		else
@@ -68,8 +69,8 @@ public class UserDAO extends AbstractDAO<User> {
 		PreparedStatement statement = connection.prepareStatement(SELECT_BY_EMAIL);
 		statement.setString(1, email);
 		ResultSet resultSet = statement.executeQuery();
-		statement.close();
 		List<User> users = new Transformer<User>(User.class).fromRStoCollection(resultSet);
+		statement.close();
 		if (users.size() > 0)
 			return users.iterator().next();
 		else

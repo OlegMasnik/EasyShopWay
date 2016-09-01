@@ -24,7 +24,7 @@ public class User {
 	private Date dateOfBirth;
 
 	@Column("active")
-	private boolean active;
+	private Boolean active;
 
 	@Column("role")
 	private String role;
@@ -34,7 +34,7 @@ public class User {
 	}
 
 	public User(Integer id, String firstName, String lastName, String email, String password, Date dateOfBirth,
-			boolean active, String role) {
+			Boolean active, String role) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -94,11 +94,11 @@ public class User {
 		this.dateOfBirth = Date.valueOf(dateOfBirth);
 	}
 
-	public boolean isActive() {
+	public Boolean isActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 

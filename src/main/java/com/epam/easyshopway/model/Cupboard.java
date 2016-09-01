@@ -16,13 +16,13 @@ public class Cupboard {
 	private String descriptionUk;
 
 	@Column("active")
-	private boolean active;
+	private Boolean active;
 
 	public Cupboard() {
 		super();
 	}
 
-	public Cupboard(Integer id, Integer boardAmount, String descriptionEn, String descriptionUk, boolean active) {
+	public Cupboard(Integer id, Integer boardAmount, String descriptionEn, String descriptionUk, Boolean active) {
 		super();
 		this.id = id;
 		this.boardAmount = boardAmount;
@@ -63,11 +63,11 @@ public class Cupboard {
 		this.descriptionUk = descriptionUk;
 	}
 
-	public boolean isActive() {
+	public Boolean isActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 }

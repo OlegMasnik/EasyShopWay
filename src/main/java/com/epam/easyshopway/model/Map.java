@@ -13,7 +13,7 @@ public class Map {
 	private Integer height;
 
 	@Column("active")
-	private boolean active;
+	private Boolean active;
 
 	public Map() {
 		super();
@@ -51,11 +51,11 @@ public class Map {
 		this.height = height;
 	}
 
-	public boolean isActive() {
+	public Boolean isActive() {
 		return active;
 	}
 
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 }

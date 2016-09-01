@@ -43,8 +43,8 @@ public class MapDAO extends AbstractDAO<Map> {
 		PreparedStatement statement = connection.prepareStatement(SELECT_MAP_BY_ID);
 		statement.setInt(1, id);
 		ResultSet resultSet = statement.executeQuery();
-		statement.close();
 		List<Map> maps = new Transformer<Map>(Map.class).fromRStoCollection(resultSet);
+		statement.close();
 		if (maps.size() > 0) {
 			return maps.iterator().next();
 		} else {
@@ -57,8 +57,9 @@ public class MapDAO extends AbstractDAO<Map> {
 	public List<Map> getAll() throws SQLException, IllegalAccessException, InstantiationException {
 		PreparedStatement statement = connection.prepareStatement(SELECT_ALL_MAPS);
 		ResultSet resultSet = statement.executeQuery();
+		List<Map> maps = new Transformer<Map>(Map.class).fromRStoCollection(resultSet);
 		statement.close();
-		return new Transformer<Map>(Map.class).fromRStoCollection(resultSet);
+		return maps;
 
 	}
 
