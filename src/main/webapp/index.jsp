@@ -9,7 +9,7 @@
     <title>A Pen by Team  Angular Material</title>
     
     <link rel='stylesheet prefetch' href='${pageContext.request.contextPath}/css/angular-material.min.css'>
-<%--     <link rel='stylesheet prefetch' href='${pageContext.request.contextPath}/css/style.css'> --%>
+
 
     <body ng-app="myApp" ng-cloak layout="column">
 
@@ -55,7 +55,7 @@
 Copyright 2016 Google Inc. All Rights Reserved. 
 Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
 -->
-    <script src='${pageContext.request.contextPath}/js/angular.js'></script>
+<script src='${pageContext.request.contextPath}/js/angular.js'></script>
 <script src='${pageContext.request.contextPath}/js/angular-aria.js'></script>
 <script src='${pageContext.request.contextPath}/js/angular-animate.js'></script>
 <script src='${pageContext.request.contextPath}/js/angular-material.min.js'></script>
