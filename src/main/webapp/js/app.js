@@ -132,6 +132,9 @@
 						$scope.status = 'You cancelled the dialog.';
 					});
 		};
+		$scope.openCabinet = function(){
+			location.href = '';
+		};
 
 		function DialogController($scope, $mdDialog) {
 			$scope.hide = function() {
