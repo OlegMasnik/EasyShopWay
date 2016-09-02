@@ -6,6 +6,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 
+
+
+
 import com.epam.easyshopway.dao.transformer.Transformer;
 import com.epam.easyshopway.model.User;
 
@@ -16,6 +19,7 @@ public class UserDAO extends AbstractDAO<User> {
 	private final String SELECT_BY_EMAIL = "SELECT * FROM user WHERE email LIKE ?;";
 	private final String UPDATE = "UPDATE user SET first_name = ?, last_name = ?, email = ?, password = ?, date_of_birth = ?, active = ?, role = ? WHERE id = ?;";
 	private final String DELETE = "UPDATE user SET active = 0 WHERE id = ?;";
+	private final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT * FROM user WHERE email = ? AND password = ?";
 
 	public UserDAO() {
 		super();
@@ -100,5 +104,16 @@ public class UserDAO extends AbstractDAO<User> {
 		int result = statement.executeUpdate();
 		statement.close();
 		return result;
+	}
+
+	public boolean validateUser(String email, String password) throws SQLException, InstantiationException, IllegalAccessException {
+		PreparedStatement preparedStatement = connection.prepareStatement(GET_USER_BY_LOGIN_AND_PASSWORD);
+        preparedStatement.setString(1, email);
+        preparedStatement.setString(2, password);
+        ResultSet rs = preparedStatement.executeQuery();
+        List<User> users = new Transformer<User>(User.class).fromRStoCollection(rs);
+		preparedStatement.close();
+
+		return users.size() !=0;
 	}
 }

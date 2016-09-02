@@ -45,6 +45,19 @@ public class UserService {
 		return null;
 	}
 	
+	public static User getByEmail (String email){
+		try(UserDAO userDAO = new UserDAO()){
+			return userDAO.getByEmail(email);
+		}catch (SQLException e){
+			e.printStackTrace();
+		}catch (IllegalAccessException | InstantiationException e){
+			e.printStackTrace();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	public static int update (Integer userId, User user){
 		try(UserDAO userDAO = new UserDAO()){
 			return userDAO.update(userId, user);
@@ -65,5 +78,16 @@ public class UserService {
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	public static boolean validateUser(String email, String password) {
+		try(UserDAO userDAO = new UserDAO()){
+			return userDAO.validateUser(email, password);
+		}catch (SQLException e){
+			e.printStackTrace();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return false;
 	}
 }

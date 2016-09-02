@@ -18,6 +18,7 @@
         <md-button aria-label="Go Back">
           Go Back
         </md-button>
+        <a href="HomePage.do">link to home</a>
         <h2>
           <span>Toolbar with Standard Buttons</span>
         </h2>

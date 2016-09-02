@@ -1,34 +1,107 @@
-div {
-  border: 2px solid darkblue;
+.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {
+    color: white;
 }
 
 
-.box3, .box2, .box1 {  
-  display:-webkit-box;  
-  display:-webkit-flex;  
-  display:-ms-flexbox;  
-  display:flex;
-  box-sizing: border-box;
-  min-width:100%;
+
+/* SignUp fields*/
+
+.inputdemoErrors .inputErrorsApp {
+    min-height: 48px;
 }
 
-.box1 {  
-  max-height:70%;
-  -webkit-box-flex:1;
-  -webkit-flex:1 1 70%;
-      -ms-flex:1 1 70%;
-          flex:1 1 70%;
+.inputdemoErrors md-input-container > p {
+    font-size: 0.8em;
+    text-align: left;
+    width: 100%;
 }
 
-.box2 {
-  height:20px;  
+
+/* Product list */
+
+.chipsdemoContactChips md-content.autocomplete {
+    min-height: 250px;
 }
 
-.box3 {  
-  height:30%;
-  max-height:30%;
-  -webkit-box-flex:1;
-  -webkit-flex:1 1 30%;
-      -ms-flex:1 1 30%;
-          flex:1 1 30%;
+.chipsdemoContactChips md-content.autocomplete input {
+    min-width: 400px;
+}
+
+.chipsdemoContactChips .md-item-text.compact {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.chipsdemoContactChips .contact-item {
+    box-sizing: border-box;
+}
+
+.chipsdemoContactChips .contact-item.selected {
+    opacity: 0.5;
+}
+
+.chipsdemoContactChips .contact-item.selected h3 {
+    opacity: 0.5;
+}
+
+.chipsdemoContactChips .contact-item .md-list-item-text {
+    padding: 14px 0;
+    max-width: 190px;
+}
+
+.chipsdemoContactChips .contact-item .md-list-item-text h3 {
+    margin: 0 !important;
+    padding: 0;
+    line-height: 1.2em !important;
+}
+
+.chipsdemoContactChips .contact-item .md-list-item-text h3,
+.chipsdemoContactChips .contact-item .md-list-item-text p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (min-width: 960px) {
+    .chipsdemoContactChips .contact-item {
+        float: left;
+        width: 33%;
+    }
+}
+
+.chipsdemoContactChips md-contact-chips {
+    margin-bottom: 10px;
+}
+
+.chipsdemoContactChips .md-chips {
+    padding: 5px 0 8px;
+}
+
+.chipsdemoContactChips .fixedRows {
+    height: 250px;
+    overflow: hidden;
+}
+
+
+/*Date picker*/
+
+.datepickerdemoBasicUsage {
+    /** Demo styles for mdCalendar. */
+}
+
+.datepickerdemoBasicUsage md-content {
+    padding-bottom: 200px;
+}
+
+.datepickerdemoBasicUsage .validation-messages {
+    font-size: 12px;
+    color: #dd2c00;
+    margin-left: 15px;
+}
+
+
+/* Footer */
+
+footer {
+  background-color: #ccc;
 }
