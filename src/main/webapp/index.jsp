@@ -18,6 +18,7 @@
 			<h2>
 				<span>EasyShopWay</span>
 			</h2>
+			
 			<span flex></span>
 			<div ng-controller='DialogController'>
 				<md-button class="md-primary md-raised"
@@ -86,15 +87,13 @@
 
 	</div>
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	
 
 	<script src='${pageContext.request.contextPath}/js/angular.js'></script>
 	<script src='${pageContext.request.contextPath}/js/angular-aria.js'></script>
 	<script src='${pageContext.request.contextPath}/js/angular-animate.js'></script>
-	<!--    <script src='js/angular-material.min.js'></script>-->
-	<script
-		src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script src='${pageContext.request.contextPath}/js/angular-material.min.js'></script>
 	<script src='${pageContext.request.contextPath}/js/app.js'></script>
 
 	<script src="${pageContext.request.contextPath}/js/index.js"></script>
