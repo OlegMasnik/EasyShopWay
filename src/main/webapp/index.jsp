@@ -16,6 +16,7 @@
 		<jsp:include page="fragments/header.jsp"></jsp:include>
 		<jsp:include page="fragments/sidebar.jsp"></jsp:include>
 		<jsp:include page="fragments/mainContent.jsp"></jsp:include>
+		
 	</div>
 	
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
@@ -27,6 +28,6 @@
 	<script src='${pageContext.request.contextPath}/js/app.js'></script>
 
 	<script src="${pageContext.request.contextPath}/js/index.js"></script>
-
+	
 </body>
 </html>
