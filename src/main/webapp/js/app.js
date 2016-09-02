@@ -3,6 +3,14 @@
 
 	var app = angular.module('toolbarDemo1', [ 'ngMaterial' ]);
 
+	app.controller('sideNavController', sideNavController);
+
+	function sideNavController($scope, $mdSidenav) {
+		$scope.openLeftMenu = function() {
+			$mdSidenav('left').toggle();
+		};
+	}
+
 	app.controller('ToolBarCtrl', function($scope) {
 
 	});
@@ -132,7 +140,7 @@
 						$scope.status = 'You cancelled the dialog.';
 					});
 		};
-		$scope.openCabinet = function(){
+		$scope.openCabinet = function() {
 			location.href = '/EasyShopWay/Cabinet.do';
 		};
 
@@ -160,46 +168,54 @@
 		$scope.myDate = new Date();
 	});
 
-	app.controller("AuthenticationCtrl", function($scope, $http, $location) {
-			$scope.SendData = function() {
-				// use $.param jQuery function to serialize data
-				// from JSON
-				console.log($scope.email);
-				console.log($scope.password);
+	app
+			.controller(
+					"AuthenticationCtrl",
+					function($scope, $http, $location) {
+						$scope.SendData = function() {
+							// use $.param jQuery function to serialize data
+							// from JSON
+							console.log($scope.email);
+							console.log($scope.password);
 
-				$scope.errorText += ' EEEEEEError.';
+							$scope.errorText += ' EEEEEEError.';
 
-				var data = $.param({
-					email : $scope.email,
-					password : $scope.password
-				});
+							var data = $.param({
+								email : $scope.email,
+								password : $scope.password
+							});
 
-				console.log('Read ' + data);
+							console.log('Read ' + data);
 
-				var config = {
-					headers : {
-						'Content-Type' : 'application/x-www-form-urlencoded;charset=utf-8;'
-					}
-				}
-
-				$http.post('/EasyShopWay/Authentication.do', data, config)
-					.success(function(data, status, headers, config) {
-							console.log(data);
-							if (data.emailErrMsg != undefined) {
-								// $scope.emailError =
-								// data.emailErrMsg;
-								$scope.serverErrors = true;
-							} else if (data.passwordErrMsg != undefined) {
-								$scope.passwordError = data.passwordErrMsg;
-							} else {
-								$location.path("/EasyShopWay/HomePage.do");
+							var config = {
+								headers : {
+									'Content-Type' : 'application/x-www-form-urlencoded;charset=utf-8;'
+								}
 							}
-						}).error(
-						function(data, status, header,
-								config) {
-							console.log('fail');
-						});
-			};
-		});
+
+							$http
+									.post('/EasyShopWay/Authentication.do',
+											data, config)
+									.success(
+											function(data, status, headers,
+													config) {
+												console.log(data);
+												if (data.emailErrMsg != undefined) {
+													// $scope.emailError =
+													// data.emailErrMsg;
+													$scope.serverErrors = true;
+												} else if (data.passwordErrMsg != undefined) {
+													$scope.passwordError = data.passwordErrMsg;
+												} else {
+													$location
+															.path("/EasyShopWay/HomePage.do");
+												}
+											}).error(
+											function(data, status, header,
+													config) {
+												console.log('fail');
+											});
+						};
+					});
 
 })();

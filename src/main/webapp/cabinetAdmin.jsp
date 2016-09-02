@@ -4,20 +4,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Home</title>
+<title>Admin Cabinet</title>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/style.css">
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/angular-material.min.css">
 </head>
-<body ng-app='toolbarDemo1'>
-	<div ng-controller="SideNavCtrl" layout="column" ng-cloak>
+<body ng-app='toolbarDemo1' layout="column">
 
 		<jsp:include page="fragments/header.jsp"></jsp:include>
-		<jsp:include page="fragments/sidebar.jsp"></jsp:include>
 		<jsp:include page="fragments/cabinetAdminFragment.jsp"></jsp:include>
 		
-	</div>
 	
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	

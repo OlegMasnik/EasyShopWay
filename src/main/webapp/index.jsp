@@ -14,7 +14,6 @@
 	<div ng-controller="SideNavCtrl" layout="column" ng-cloak>
 
 		<jsp:include page="fragments/header.jsp"></jsp:include>
-		<jsp:include page="fragments/sidebar.jsp"></jsp:include>
 		<jsp:include page="fragments/mainContent.jsp"></jsp:include>
 		
 	</div>
