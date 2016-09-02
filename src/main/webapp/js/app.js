@@ -133,7 +133,7 @@
 					});
 		};
 		$scope.openCabinet = function(){
-			location.href = '';
+			location.href = '/EasyShopWay/Cabinet.do';
 		};
 
 		function DialogController($scope, $mdDialog) {

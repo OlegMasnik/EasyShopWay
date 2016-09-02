@@ -8,7 +8,7 @@ public class CabinetCommand extends FrontCommand {
 
 	@Override
 	public void execute() throws ServletException, IOException {
-		forward("/cabinet.jsp");
+		forward("/cabinetAdmin.jsp");
 	}
 
 }
