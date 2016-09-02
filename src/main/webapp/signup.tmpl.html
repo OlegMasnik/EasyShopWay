@@ -31,11 +31,11 @@
 
                         <div ng-controller="DatePickerCtrl" ng-cloak>
                             <label>Date of birth</label>
-                            <md-datepicker md-max-date="birthday" ng-model="data.birthday" md-placeholder="Enter date"></md-datepicker>
+                            <md-datepicker md-max-date="birthday" name="birthday" ng-model="data.birthday" md-placeholder="Enter date"></md-datepicker>
                         </div>
 
                         <md-input-container class="md-block">
-                            <label>Client Email</label>
+                            <label>Email</label>
                             <input required type="email" name="email" ng-model="data.email" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
                             <div ng-messages="regForm.email.$error" role="alert">
                                 <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
