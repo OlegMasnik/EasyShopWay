@@ -15,7 +15,7 @@
 
 		<jsp:include page="fragments/header.jsp"></jsp:include>
 		<jsp:include page="fragments/sidebar.jsp"></jsp:include>
-		<jsp:include page="fragments/mainContent.jsp"></jsp:include>
+		<jsp:include page="fragments/cabinetAdminFragment.jsp"></jsp:include>
 		
 	</div>
 	

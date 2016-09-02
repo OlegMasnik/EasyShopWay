@@ -132,6 +132,9 @@
 						$scope.status = 'You cancelled the dialog.';
 					});
 		};
+		$scope.openCabinet = function(){
+			location.href = '/EasyShopWay/Cabinet.do';
+		};
 
 		function DialogController($scope, $mdDialog) {
 			$scope.hide = function() {
