@@ -1,42 +1,44 @@
-<md-dialog aria-label="LogIn">
-    <form>
-        <md-toolbar>
-            <div class="md-toolbar-tools">
-                <h2>LogIn</h2>
-                <span flex></span>
-                <md-button class="md-icon-button" ng-click="cancel()">
-                    <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
-                </md-button>
-            </div>
-        </md-toolbar>
-        <md-dialog-content style="max-width:800px;max-height:810px; ">
-            <md-content layout-padding>
-                <form name="regForm" action="Authentication.do">
+<md-dialog ng-controller="AuthenticationCtrl" aria-label="LogIn">
+<form>
+	<md-toolbar>
+	<div class="md-toolbar-tools">
+		<h2>LogIn</h2>
+		<span flex></span>
+		<md-button class="md-icon-button" ng-click="cancel()"> <md-icon
+			md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+		</md-button>
+	</div>
+	</md-toolbar>
+	<md-dialog-content style="max-width:800px;max-height:810px; ">
+	<md-content layout-padding>
+	<form name="regForm" action="Authentication.do">
 
-                    <md-input-container class="md-block">
-                        <label>Email</label>
-                        <input required type="email" name="email" ng-model="project.clientEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-                        <div ng-messages="projectForm.clientEmail.$error" role="alert">
-                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
-                                Your email must be between 10 and 100 characters long and look like an e-mail address.
-                            </div>
-                        </div>
-                    </md-input-container>
+		<md-input-container class="md-block"> <label>Email</label>
+		<input required type="email" name="email" id="email" ng-model="email"
+			minlength="5" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+		<div ng-messages="regForm.email.$error" role="alert">
+			<div
+				ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+				Your email must be between 5 and 100 characters long and look like
+				an e-mail address.</div>
+			<div ng-message="email">{{emailError}}</div>
+		</div>
+		</md-input-container>
 
-                    <md-input-container class="md-block">
-                        <label>Password</label>
-                        <input required type="password" name="password" ng-model="project.clientName">
-                        <div ng-messages="projectForm.clientName.$error">
-                            <div ng-message="required">This is required.</div>
-                        </div>
-                    </md-input-container>
+		<md-input-container class="md-block"> <label>Password</label>
+		<input required type="password" name="password" id="password"
+			ng-model="password">
+		<div ng-messages="regForm.password.$error">
+			<div ng-message="required">Please enter password.</div>
+			<div ng-message-exp="password">{{passwordError}}</div>
+		</div>
+		</md-input-container>
 
-                    <div>
-                        <md-button type="submit">Submit</md-button>
-                    </div>
+		<div>
+			<md-button type="submit" ng-click='SendData()'>Submit</md-button>
+		</div>
 
-                </form>
-            </md-content>
-        </md-dialog-content>
-    </form>
+	</form>
+	</md-content> </md-dialog-content>
+</form>
 </md-dialog>

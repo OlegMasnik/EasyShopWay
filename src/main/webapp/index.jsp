@@ -19,7 +19,7 @@
 				<span>EasyShopWay</span>
 			</h2>
 			<span flex></span>
-			<div ng-controller='LogInController'>
+			<div ng-controller='DialogController'>
 				<md-button class="md-primary md-raised"
 					ng-click="showSignUpDialog($event)"> SignUp </md-button>
 				<md-button class="md-primary md-raised"
@@ -85,9 +85,9 @@
 		<!--    Footer-->
 
 	</div>
-	<script src="https://code.jquery.com/jquery-3.1.0.js"
-		integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="
-		crossorigin="anonymous"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
 
 	<script src='${pageContext.request.contextPath}/js/angular.js'></script>
 	<script src='${pageContext.request.contextPath}/js/angular-aria.js'></script>

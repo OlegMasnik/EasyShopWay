@@ -13,11 +13,11 @@ import com.epam.easyshopway.dao.transformer.Transformer;
 import com.epam.easyshopway.model.User;
 
 public class UserDAO extends AbstractDAO<User> {
-	private final String INSERT = "INSERT INTO user (first_name, last_name, email, password, date_of_birth, active, role ) VALUES(?, ?, ?, ?, ?, ?, ?);";
+	private final String INSERT = "INSERT INTO user (first_name, last_name, email, password, date_of_birth, active, role, language) VALUES(?, ?, ?, ?, ?, ?, ?, ?);";
 	private final String SELECT_ALL = "SELECT * FROM user WHERE active = 1;";
 	private final String SELECT_BY_ID = "SELECT * FROM user WHERE id = ?;";
 	private final String SELECT_BY_EMAIL = "SELECT * FROM user WHERE email LIKE ?;";
-	private final String UPDATE = "UPDATE user SET first_name = ?, last_name = ?, email = ?, password = ?, date_of_birth = ?, active = ?, role = ? WHERE id = ?;";
+	private final String UPDATE = "UPDATE user SET first_name = ?, last_name = ?, email = ?, password = ?, date_of_birth = ?, active = ?, role = ?, language = ? WHERE id = ?;";
 	private final String DELETE = "UPDATE user SET active = 0 WHERE id = ?;";
 	private final String GET_USER_BY_LOGIN_AND_PASSWORD = "SELECT * FROM user WHERE email = ? AND password = ?";
 
@@ -40,6 +40,7 @@ public class UserDAO extends AbstractDAO<User> {
 		statement.setDate(5, user.getDateOfBirth());
 		statement.setBoolean(6, user.isActive());
 		statement.setString(7, user.getRole());
+		statement.setString(8, user.getLanguage());
 		statement.executeUpdate();
 		statement.close();
 		return getByEmail(user.getEmail());
@@ -91,7 +92,8 @@ public class UserDAO extends AbstractDAO<User> {
 		statement.setDate(5, user.getDateOfBirth());
 		statement.setBoolean(6, user.isActive());
 		statement.setString(7, user.getRole());
-		statement.setInt(8, userId);
+		statement.setString(8, user.getLanguage());
+		statement.setInt(9, userId);
 		int result = statement.executeUpdate();
 		statement.close();
 		return result;

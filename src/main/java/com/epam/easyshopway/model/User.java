@@ -28,13 +28,16 @@ public class User {
 
 	@Column("role")
 	private String role;
+	
+	@Column("language")
+	private String language;
 
 	public User() {
 		super();
 	}
 
 	public User(Integer id, String firstName, String lastName, String email, String password, Date dateOfBirth,
-			Boolean active, String role) {
+			Boolean active, String role, String language) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -44,6 +47,7 @@ public class User {
 		this.dateOfBirth = dateOfBirth;
 		this.active = active;
 		this.role = role;
+		this.language = language;
 	}
 
 	public Integer getId() {
@@ -108,5 +112,13 @@ public class User {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 }
