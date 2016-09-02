@@ -15,29 +15,21 @@ public class CupboardPlacement {
 	@Column("x_start")
 	private Integer xStart;
 
-	@Column("y_start")
-	private Integer yStart;
-
 	@Column("x_end")
 	private Integer xEnd;
-
-	@Column("y_end")
-	private Integer yEnd;
 
 	public CupboardPlacement() {
 		super();
 	}
 
-	public CupboardPlacement(Integer id, Integer mapId, Integer cupboardId, Integer xStart, Integer yStart,
-			Integer xEnd, Integer yEnd) {
+	public CupboardPlacement(Integer id, Integer mapId, Integer cupboardId,
+			Integer xStart, Integer xEnd) {
 		super();
 		this.id = id;
 		this.mapId = mapId;
 		this.cupboardId = cupboardId;
 		this.xStart = xStart;
-		this.yStart = yStart;
 		this.xEnd = xEnd;
-		this.yEnd = yEnd;
 	}
 
 	public Integer getId() {
@@ -72,28 +64,12 @@ public class CupboardPlacement {
 		this.xStart = xStart;
 	}
 
-	public Integer getYStart() {
-		return yStart;
-	}
-
-	public void setYStart(Integer yStart) {
-		this.yStart = yStart;
-	}
-
 	public Integer getXEnd() {
 		return xEnd;
 	}
 
 	public void setXEnd(Integer xEnd) {
 		this.xEnd = xEnd;
-	}
-
-	public Integer getYEnd() {
-		return yEnd;
-	}
-
-	public void setYEnd(Integer yEnd) {
-		this.yEnd = yEnd;
 	}
 
 }

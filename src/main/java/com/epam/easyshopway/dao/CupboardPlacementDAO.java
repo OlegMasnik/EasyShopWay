@@ -11,8 +11,8 @@ import com.epam.easyshopway.model.CupboardPlacement;
 public class CupboardPlacementDAO extends AbstractDAO<CupboardPlacement> {
 	private final String SELECT_ALL = "SELECT * FROM cupboard_placement;";
 	private final String SELECT_BY_ID = "SELECT * FROM cupboard_placement WHERE id = ?";
-	private final String INSERT = "INSERT INTO cupboard_placement (map_id, cupboard_id, x_start, y_start, x_end, y_end) VALUES (?, ?, ?, ?, ?, ?);";
-	private final String UPDATE = "UPDATE cupboard_placement SET map_id = ?, cupboard_id = ?, x_start = ?, y_start = ?, x_end = ?, y_end = ? where id =? ";
+	private final String INSERT = "INSERT INTO cupboard_placement (map_id, cupboard_id, x_start,  x_end) VALUES ( ?, ?, ?, ?);";
+	private final String UPDATE = "UPDATE cupboard_placement SET map_id = ?, cupboard_id = ?, x_start = ?,  x_end = ? where id =? ";
 
 	@Override
 	public int insert(CupboardPlacement el) throws SQLException {
@@ -20,9 +20,7 @@ public class CupboardPlacementDAO extends AbstractDAO<CupboardPlacement> {
 		statement.setInt(1, el.getMapId());
 		statement.setInt(2, el.getCupboardId());
 		statement.setInt(3, el.getXStart());
-		statement.setInt(4, el.getYStart());
-		statement.setInt(5, el.getXEnd());
-		statement.setInt(6, el.getYEnd());
+		statement.setInt(4, el.getXEnd());
 		return statement.executeUpdate();
 	}
 
@@ -32,10 +30,8 @@ public class CupboardPlacementDAO extends AbstractDAO<CupboardPlacement> {
 		statement.setInt(1, el.getMapId());
 		statement.setInt(2, el.getCupboardId());
 		statement.setInt(3, el.getXStart());
-		statement.setInt(4, el.getYStart());
-		statement.setInt(5, el.getXEnd());
-		statement.setInt(6, el.getYEnd());
-		statement.setInt(7, id);
+		statement.setInt(4, el.getXEnd());
+		statement.setInt(5, id);
 		int result = statement.executeUpdate();
 		statement.close();
 		return result;
@@ -48,22 +44,24 @@ public class CupboardPlacementDAO extends AbstractDAO<CupboardPlacement> {
 	}
 
 	@Override
-	public List<CupboardPlacement> getAll() throws SQLException, IllegalAccessException, InstantiationException {
+	public List<CupboardPlacement> getAll() throws SQLException,
+			IllegalAccessException, InstantiationException {
 		PreparedStatement statement = connection.prepareStatement(SELECT_ALL);
 		ResultSet resultSet = statement.executeQuery(SELECT_ALL);
-		List<CupboardPlacement> placements = new Transformer<CupboardPlacement>(CupboardPlacement.class)
-				.fromRStoCollection(resultSet);
+		List<CupboardPlacement> placements = new Transformer<CupboardPlacement>(
+				CupboardPlacement.class).fromRStoCollection(resultSet);
 		statement.close();
 		return placements;
 	}
 
 	@Override
-	public CupboardPlacement getById(Integer id) throws SQLException, IllegalAccessException, InstantiationException {
+	public CupboardPlacement getById(Integer id) throws SQLException,
+			IllegalAccessException, InstantiationException {
 		PreparedStatement statement = connection.prepareStatement(SELECT_BY_ID);
 		statement.setInt(1, id);
 		ResultSet resultSet = statement.executeQuery();
-		List<CupboardPlacement> cupboardPlacements = new Transformer<CupboardPlacement>(CupboardPlacement.class)
-				.fromRStoCollection(resultSet);
+		List<CupboardPlacement> cupboardPlacements = new Transformer<CupboardPlacement>(
+				CupboardPlacement.class).fromRStoCollection(resultSet);
 		statement.close();
 		if (cupboardPlacements.size() > 0)
 			return cupboardPlacements.iterator().next();
